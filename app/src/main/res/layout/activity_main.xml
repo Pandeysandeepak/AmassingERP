@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/ContentBox"
+        android:orientation="vertical">
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/refreshLayout"
+            android:layout_width="match_parent"
+            android:layout_height="675dp"
+            android:layout_weight="5"
+            tools:ignore="ExtraText,MissingClass">
+
+            <WebView
+                android:id="@+id/web_view_contribute"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            </WebView>
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
+        <LinearLayout
+            android:id="@+id/bottomNavigationView"
+            android:layout_width="match_parent"
+            android:layout_height="70sp"
+            android:background="@color/white"
+            android:layout_gravity="bottom"
+            android:orientation="horizontal"
+            >
+
+            <LinearLayout
+                android:id="@+id/HomeBox"
+                android:layout_width="52dp"
+                android:layout_height="60sp"
+                android:layout_marginStart="5sp"
+                android:background="@color/white"
+                android:clickable="true"
+                android:layout_gravity="center_vertical"
+                android:focusable="true"
+                android:orientation="vertical"
+                android:pointerIcon="grabbing">
+
+                <ImageView
+                    android:id="@+id/HomeBtn"
+                    android:layout_width="40sp"
+                    android:layout_height="40sp"
+                    android:backgroundTint="@color/white"
+                    android:background="@color/white"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="5sp"
+                    android:src="@drawable/home_p" />
+
+                <TextView
+                    android:id="@+id/HomeBtnText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="Home"
+                    android:layout_gravity="center_horizontal"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:id="@+id/MenuBox"
+                android:layout_width="52dp"
+                android:layout_height="60sp"
+                android:layout_marginStart="43sp"
+                android:background="@color/white"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="2sp"
+                android:clickable="true"
+                android:focusable="true"
+                android:orientation="vertical"
+                android:pointerIcon="grabbing">
+
+                <ImageView
+                    android:id="@+id/MenuBtn"
+                    android:layout_width="35sp"
+                    android:layout_height="35sp"
+                    android:layout_marginTop="5sp"
+                    android:backgroundTint="@color/white"
+                    android:src="@drawable/menu_p"
+                    android:layout_gravity="center"/>
+
+                <TextView
+                    android:id="@+id/MenuBtnText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8sp"
+                    android:text="Menu"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/SettingBox"
+                android:layout_width="58dp"
+                android:layout_height="60sp"
+                android:layout_marginStart="43sp"
+                android:clickable="true"
+                android:layout_gravity="center_vertical"
+                android:background="@color/white"
+                android:focusable="true"
+                android:orientation="vertical"
+                android:pointerIcon="grabbing">
+                <ImageView
+                    android:id="@+id/SettingBtn"
+                    android:layout_width="40sp"
+                    android:backgroundTint="@color/white"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_height="40sp"
+                    android:src="@drawable/settings_p" />
+
+                <TextView
+                    android:id="@+id/SettingBtnText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Settings"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+
+
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/NoticeBox"
+                android:layout_width="64dp"
+                android:layout_height="70dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="43sp"
+                android:clickable="true"
+                android:background="@color/white"
+                android:focusable="true"
+                android:orientation="vertical"
+                android:pointerIcon="grabbing">
+
+                <ImageView
+                    android:id="@+id/NoticeBtn"
+                    android:layout_width="47sp"
+                    android:layout_height="47dp"
+                    android:backgroundTint="@color/white"
+                    android:layout_gravity="center_horizontal"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/notice_p" />
+
+                <TextView
+                    android:id="@+id/NoticeBtnText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Notice"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+
+
+
+
+
+
+
+
+        </LinearLayout>
+
+
+
+
+
+
+
+
+    </LinearLayout>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "613235085015",
+    "project_id": "amassingerp",
+    "storage_bucket": "amassingerp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:613235085015:android:24de5f401df42bd8236a92",
+        "android_client_info": {
+          "package_name": "com.example.webview"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBOTPZiTKGhUa9iUrPixfJpFAc-3EmY_xs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

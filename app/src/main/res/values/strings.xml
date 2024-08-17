@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Amassing ERP</string>
+    <string name="amassing_erp">Amassing ERP</string>
+    <string name="image_chooser">" Image Chooser"</string>
+    <string name="notification_channel_name">Important Alerts</string>
+    <string name="notification_channel_desc">Get latest and important alerts.</string>
+    <string name="alert">alert</string>
+    <string name="msg_token_fmt">Welcome To Application</string>
+</resources>
