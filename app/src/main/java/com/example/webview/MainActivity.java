@@ -1,8 +1,12 @@
 package com.example.webview;
 
+import static android.content.ContentValues.TAG;
+
 import android.Manifest;
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.app.Notification;
+import android.app.NotificationManager;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -12,6 +16,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
+import android.util.Log;
 import android.view.View;
 import android.webkit.ValueCallback;
 import android.webkit.WebChromeClient;
@@ -33,11 +38,15 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+
 public class MainActivity extends AppCompatActivity {
 
     private static final int FILE_CHOOSER_RESULT_CODE = 1;
     private static final int CAMERA_PERMISSION_REQUEST_CODE = 2;
-    private static final int STORAGE_PERMISSION_REQUEST_CODE = 3;
+    private static final String asw_fcm_channel="Notice";
+    private static final boolean ASWP_OFFLINE = true;
+    NotificationManager asw_notification;
+    Notification asw_notification_new;
 
     private ValueCallback<Uri[]> filePathCallback;
     private String currentPhotoPath;
@@ -45,12 +54,22 @@ public class MainActivity extends AppCompatActivity {
     private ProgressDialog progressDialog;
     private SwipeRefreshLayout swipeRefreshLayout;
     private LinearLayout homeBtn, menuBtn, settingsBtn, noticeBtn;
+    private String fcm_token;
+    public static String accessKey = "";
+
+
 
     @SuppressLint({"SetJavaScriptEnabled", "MissingInflatedId"})
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
+        // Fetch Access Token asynchronously
+
+
+
 
         homeBtn = findViewById(R.id.HomeBox);
         menuBtn = findViewById(R.id.MenuBox);
@@ -63,15 +82,18 @@ public class MainActivity extends AppCompatActivity {
         progressDialog = new ProgressDialog(this);
         progressDialog.setMessage("Loading, please wait...");
 
+
+
+
+
+
+
         WebSettings webSettings = webView.getSettings();
         webSettings.setJavaScriptEnabled(true);
         webSettings.setAllowFileAccess(true);
         webSettings.setAllowContentAccess(true);
         webSettings.setLoadWithOverviewMode(true);
         webSettings.setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK);
-
-
-
 
         homeBtn.setOnClickListener ( new View.OnClickListener () {
             @Override
@@ -155,35 +177,25 @@ public class MainActivity extends AppCompatActivity {
                 if (ContextCompat.checkSelfPermission(MainActivity.this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED ||
                         ContextCompat.checkSelfPermission(MainActivity.this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
                     ActivityCompat.requestPermissions(MainActivity.this, new String[]{Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE}, CAMERA_PERMISSION_REQUEST_CODE);
-                    return false;
-                }
 
-                Intent captureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-                Intent pickIntent = new Intent(Intent.ACTION_GET_CONTENT);
-                pickIntent.setType("image/*");
-
-                Intent chooserIntent = Intent.createChooser(pickIntent, "Select or capture a photo");
-                if (captureIntent.resolveActivity(getPackageManager()) != null) {
-                    File photoFile = null;
-                    try {
-                        photoFile = createImageFile();
-                    } catch (IOException ex) {
-                        ex.printStackTrace();
+                    if(ContextCompat.checkSelfPermission(MainActivity.this, Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED ||
+                            ContextCompat.checkSelfPermission(MainActivity.this, Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED){
+                           openCamera ();
                     }
-                    if (photoFile != null) {
-                        Uri photoURI = FileProvider.getUriForFile(MainActivity.this, "com.example.webview.fileprovider", photoFile);
-                        captureIntent.putExtra(MediaStore.EXTRA_OUTPUT, photoURI);
-                    }
-                    chooserIntent.putExtra(Intent.EXTRA_INITIAL_INTENTS, new Intent[]{captureIntent});
+                }else{
+                    openCamera ();
                 }
-
-                startActivityForResult(chooserIntent, FILE_CHOOSER_RESULT_CODE);
                 return true;
             }
         });
 
         webView.loadUrl("http://edschool.in/cbsps");
+
+
     }
+
+
+
 
     private File createImageFile() throws IOException {
         String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
@@ -193,6 +205,17 @@ public class MainActivity extends AppCompatActivity {
         currentPhotoPath = image.getAbsolutePath();
         return image;
     }
+
+    @Override
+    protected void onResume() {
+        super.onResume ();
+        if (ContextCompat.checkSelfPermission ( MainActivity.this, Manifest.permission.CAMERA ) != PackageManager.PERMISSION_GRANTED ||
+                ContextCompat.checkSelfPermission ( MainActivity.this, Manifest.permission.WRITE_EXTERNAL_STORAGE ) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions ( MainActivity.this, new String[]{Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE}, CAMERA_PERMISSION_REQUEST_CODE );
+        }
+    }
+
+
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
@@ -218,5 +241,30 @@ public class MainActivity extends AppCompatActivity {
             filePathCallback = null;
         }
     }
+
+    public void openCamera(){
+        Intent captureIntent = new Intent( MediaStore.ACTION_IMAGE_CAPTURE);
+        Intent pickIntent = new Intent(Intent.ACTION_GET_CONTENT);
+        pickIntent.setType("image/*");
+
+        Intent chooserIntent = Intent.createChooser(pickIntent, "Select or capture a photo");
+        if (captureIntent.resolveActivity(getPackageManager()) != null) {
+            File photoFile = null;
+            try {
+                photoFile = createImageFile();
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
+            if (photoFile != null) {
+                Uri photoURI = FileProvider.getUriForFile(MainActivity.this, "com.example.webview.fileprovider", photoFile);
+                captureIntent.putExtra(MediaStore.EXTRA_OUTPUT, photoURI);
+            }
+            chooserIntent.putExtra(Intent.EXTRA_INITIAL_INTENTS, new Intent[]{captureIntent});
+        }
+
+        startActivityForResult(chooserIntent, FILE_CHOOSER_RESULT_CODE);
+
+    }
+
 }
 

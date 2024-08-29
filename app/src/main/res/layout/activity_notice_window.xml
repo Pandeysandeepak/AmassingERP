@@ -18,7 +18,7 @@
       <TextView
           android:id="@+id/NoticeText"
           android:layout_width="wrap_content"
-          android:layout_height="104dp"
+          android:layout_height="133dp"
           android:padding="10sp"
           android:text="Use this window to Publish Notice"
           android:textAlignment="center"

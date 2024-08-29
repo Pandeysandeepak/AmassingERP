@@ -18,6 +18,8 @@
             <domain includeSubdomains="true">your-server.com</domain>
         </domain-config>
     </network-security-config>
+
+
     <!--
     <device-transfer>
         <include .../>

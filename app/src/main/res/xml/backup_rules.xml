@@ -11,6 +11,14 @@
         <domain-config cleartextTrafficPermitted="true">
             <domain includeSubdomains="true">your-server.com</domain>
         </domain-config>
+
+        <dependency>
+            <groupId>com.google.firebase</groupId>
+            <artifactId>firebase-admin</artifactId>
+            <version>latest_version</version> <!-- Replace with the latest version -->
+        </dependency>
+
+
     </network-security-config>
     <!--
    <include domain="sharedpref" path="."/>
