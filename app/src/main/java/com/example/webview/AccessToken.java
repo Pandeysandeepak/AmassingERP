@@ -15,24 +15,35 @@ public class AccessToken {
             String jsonString = "{\n" +
                     "  \"type\": \"service_account\",\n" +
                     "  \"project_id\": \"amassingerp\",\n" +
-                    "  \"private_key_id\": \"d3e13195fb59fc7d4c562c7ad2e6a33e3b868e43\",\n" +
-                    "  \"private_key\": \"-----BEGIN PRIVATE KEY-----\\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQC/BL/EWquwQuuM\\n8+ltkBg18zrEBxn22pn5jm11KfR+feiyS1N8OzkqLRzma6P250FclzE2WnSqlPQD\\nMGN9dBndfsgQc81N0u+JGUeVROmEbhvpjjF3OozATR347k8y96B1hgcrdkLa6i5A\\nhU8joAjKtlXCKnVz6reINkRbk6F0lJtXsvsR3RAVv6Zi5NNBeEgX3OqhbXir2tgP\\n3XIHuPYlDYSw/rF71xtd7PGcfd9zobM4Ls68h5J/jKxF2KvB7XuozHq9EwxTw/GH\\nlSZ1+N26h6o/K5EPDObU9TzNfClXEp/mF9fxQlUwhcz4UjkpzEhyLnYELYYhajO8\\njYCKKCxjAgMBAAECggEAG3+ZBbDR14GCvFtepsWgHqAhvReSns1QbjMZQc0k49LH\\nXWdnoNI7w/0TlH45b/FRoP0o+fyin+3qhM0B/Yzprk+yiF/LVeFAV3m6qtvtTAG3\\n5fLw3wugOIzBfFT+NMWeJV0CijivnikpOGOYhXXj3h7KkLWhC+tluWeqho5lp0z/\\nsilglftw34a/m23ngws70i90ue2GMUXKPVdjDmqki6OZgl+tQNaFKzaV/cifXTVg\\nya5VMXAnEk/NDlfsz6KDXFu7W3xiE/7LIeHFlmptjaaxl14pp8aKVLumpGqwflKI\\nzQtBla4gMD50+u2AFKC3z0xSywXB6DydNL9wNWKKKQKBgQDia2BELnRufagXs/rb\\nJwpPpKdMrL3x3i77gDqmoWxxFR40hXO1oDMFJVSH4l86qZ51Axx7PPsEZnjhwwHN\\nYHR42eHYhA+QAi41Rf0xLavvgWKCGffi1J5T/PcF3+fed0S0I4RTMNpnF/yshBQx\\neSrjoJk/scMOFjZXqptrT0dD6wKBgQDX+WLoLo6OOJNQYLLVYthChAZ5KiW1Gazn\\n6czeiOPSkG0Ty/F0IYujcxcgFnEMClCTh63dQKRaCp48EJqSXKk+Gby+U/4HpNLF\\nV20EyOBvLXUBxolUcSgkq6Dxeb8xycHC6DJVQSPCIMRa7pQZrTeLRIxE19IxORYb\\nt7u06FCzaQKBgFDlGjzh+Blt7buiQzM/jJCN/HQJl8etoU2cL9hO/kacy/Dp6UBw\\nHypsfvoZp/p2lbWqyedCD1EwJ2pJ2P/+wT5YYjeQX1sNXGMOQXrrnW1x5bcj/gvd\\n+T96tuszZ011gWd29RUf9Dg3OsCMZAaVCvzO6VH3egAzcXD69JJvfb/HAoGADBFl\\nU2/2iz/iC2W72GyThPP3oKGYRcxPew33Yp/niwaC8c49ia2uLc3qhuJ6IqAY7IVy\\nU6CfDmD1gomy+WawFkY946yxzx+In3pJHzFSSSQTG6xKVCuWgKYOci/JXTDW4Ns0\\npMrlAp3uGt6l6+Ff7yo/ZEFi/1kfQSE9Hdi1WbECgYBoSNloM1QYTMt3a7URxC2w\\nxkbsWW5bap4ESD91nJRMHJxgMF8jIufLV6584ZobRPfHq2d/yEZgIGTV/EYDeKIQ\\nuiNkHyd7qjBcZ/QaRqYetJzxeovCVNgiDrfOoSz4IIteqkX4DkdhjWVZXaPK577F\\nKsBt9fXd72B5t9u7UHPYmw==\\n-----END PRIVATE KEY-----\\n\",\n" +
-                    "  \"client_email\": \"firebase-adminsdk-p4epr@amassingerp.iam.gserviceaccount.com\",\n" +
-                    "  \"client_id\": \"115092086340631677713\",\n" +
+                    "  \"private_key_id\": \"1c95765498119700a8b1754c44a2140c743560f8\",\n" +
+                    "  \"private_key\": \"-----BEGIN PRIVATE KEY-----\\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDV4BbzO/3LY/oD\\nrva8Lkce6RVjRa7g3utCIccmrbRm3BkQVPGcYAjmDyVRQRE95hiTLEA7GlpeP02s\\nQFKPTGipgGVQ7DCEhKqPy+K6r89FrYvn3p6euMiaKq/tQkSggtaEhjSEki+yIuvL\\no96YboWhz0vegTRDTOWqhJk+82PoDzZ6dSxz3uLMax63XjKn03ENXBi49Wx0SQFc\\n0BrvO9usuNMYnxeVSQlpozI2ZDRmQpqsB2WGWjX3sGR36V1JeZ+ZqzYDGEkLtnYV\\nS2O2YndtjUG060wT/uaHzF+b3CynGn7H/noc/8dLIlFb1kIJ6lj64/BUCmKyNhS5\\nhJVkOiVBAgMBAAECggEAIMH8XI/tN5hIrwS+3M7CbOfACLRKbJMoJGO+Ytxge7qt\\nX2orQXYXbClDYCEfrhk5MrLTOa+NH3oBqxGFCQFn1xeygkT9dLv0eybRbiJHFGyC\\n4mZKFD8dgTjAOQ5D1Z6Ekx1nxisKgXXGI4AmCWHa4jrjwMuNq4XdIr4W0g9UV4f+\\ng3ohABcz09zBMshzPAoYQqVRd+afcYiLx0d3C1anYjd8HokAr08jtT0bFRo7fn2v\\nPq0YHODbssun/5iv2ZGjtyIV2LPirRsho9aY5vCUe7qQW/ZbhyDX48u+c9JZKcR+\\n8/T3oTZEKC9hYznFHBfjgpCrFx98b91JsoqM3ILq4wKBgQD3Nd0NywiqLbUyAbtz\\nSY7gpV5BoHeh8sbqwg5/Zy+TLtIrZ9HCYB7ie/cFrYnkTuZ0pFSM0DormC/IQAZl\\n4+Kv2LWwJ+ynV/sSfxH/RUsZIoatcgM3UhKMrH8EjtRT7UvImlLS3KGW80Ysy+Ak\\nug1YdmDX47LfUipD+lIF+ZXMdwKBgQDdes6KY6Yrnrm9eMfTL0pbxgm6/mP0qMIh\\n5gYQP7+8ujQB0uN/j6FN1TcWcGDd7oy+ZVbADwkPVXUsQ6J9mkAYFbiIIInPimVM\\nxTveWhMnWcLi5phnc/iGMw+DBqa/IU0IjTv1X2QvfXWsD08kmMGxkYTB+o94eesA\\n6iOb8QRiBwKBgQCTj0w+onWulw/0JIKOg1bMkwkbJTyjp3XCxUjAFYiZUzZSgGr9\\nmkB1Mke11OtdIxd+gmSRlO1T/khvQIBRK2CxVCrHVl11Whfc54qHlAYKn8hCGa7/\\nw3adD43V26ez3Q4CVNOhV98Aan/111AYvBGhPy/5TcoEcVgXMYDqXhtjawKBgFIr\\nD5l0IuAoAQz0VF5bOyEVNeL0Ii1QtsVQy4sXu5DPHCBZFyHqLZPsuIVQp/9uUzUH\\n78lNSrUvpUsIxK4IniLRXCbUu4wN8ksrGW0CyfxdZto7ZutqsRdItkaMHyzls+iq\\nTUZZX5fm2dM90sTnD2VLcY9t3/B4euFZ/GAMaO3dAoGBAI3x5KoaaNQkidT74Vvk\\nXV7OiS+wPBSNmmHBfCkjemRx0xbNLoz+3Fu7EzBCz5bCzsMoYNvaFUl0qnSPtBPc\\nCi5D+xZeyrZF8imDwkPYwygOnekqrm5ffc5OW2YKCbr24tvzl6l2JnRCmEu5TwVH\\nH9xi82RWOfWhvvOtAF9lvFi8\\n-----END PRIVATE KEY-----\\n\",\n" +
+                    "  \"client_email\": \"projectowner@amassingerp.iam.gserviceaccount.com\",\n" +
+                    "  \"client_id\": \"108458362909919115516\",\n" +
                     "  \"auth_uri\": \"https://accounts.google.com/o/oauth2/auth\",\n" +
                     "  \"token_uri\": \"https://oauth2.googleapis.com/token\",\n" +
                     "  \"auth_provider_x509_cert_url\": \"https://www.googleapis.com/oauth2/v1/certs\",\n" +
-                    "  \"client_x509_cert_url\": \"https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-p4epr%40amassingerp.iam.gserviceaccount.com\",\n" +
+                    "  \"client_x509_cert_url\": \"https://www.googleapis.com/robot/v1/metadata/x509/projectowner%40amassingerp.iam.gserviceaccount.com\",\n" +
                     "  \"universe_domain\": \"googleapis.com\"\n" +
-                    "}\n";
+                    "}";
             InputStream stream = new ByteArrayInputStream(jsonString.getBytes(StandardCharsets.UTF_8));
             GoogleCredentials googleCredentials = GoogleCredentials.fromStream(stream)
                     .createScoped(firebaseMessagingScope);
-                  googleCredentials.refresh ();
-            // getAccessToken handles token refresh if expired
-            return googleCredentials.getAccessToken ().getTokenValue ();
+
+            Log.d("AccessToken", "GoogleCredentials created: " + googleCredentials);
+
+            googleCredentials.refresh();
+
+            Log.d("AccessToken", "Refreshed GoogleCredentials: " + googleCredentials);
+
+            if (googleCredentials.getAccessToken() != null) {
+                Log.d("AccessToken", "Access token obtained: " + googleCredentials.getAccessToken().getTokenValue());
+                return googleCredentials.getAccessToken().getTokenValue();
+            } else {
+                Log.e("AccessToken", "Failed to obtain access token. GoogleCredentials.getAccessToken() returned null.");
+                return null;
+            }
         } catch (Exception e) {
-            Log.e("AccessToken", "getAccessToken: " + e.getLocalizedMessage());
+            Log.e("AccessToken", "Error obtaining access token: ", e);
             return null;
         }
     }

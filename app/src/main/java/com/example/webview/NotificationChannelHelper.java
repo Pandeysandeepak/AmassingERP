@@ -6,8 +6,8 @@ import android.content.Context;
 import android.os.Build;
 
 public class NotificationChannelHelper {
-    public static final String channelId = "NOTIFICATION_CHANNEL";
-    public static final String channelName = "My App Notifications";
+    public static final String channelId = "CHANNEL";
+    public static final String channelName = "MyAppNotifications";
     public static final String CHANNEL_DESCRIPTION = "Notifications from my app";
 
     public static void createNotificationChannel(Context context) {

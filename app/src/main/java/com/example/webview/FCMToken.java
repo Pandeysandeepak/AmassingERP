@@ -12,6 +12,7 @@ public class FCMToken extends FirebaseMessagingService {
 
 
     public static void generateFCMToken() {
+        FirebaseMessaging.getInstance();
         FirebaseMessaging.getInstance ().getToken ()
                 .addOnCompleteListener ( task -> {
                     if (!task.isSuccessful ()) {

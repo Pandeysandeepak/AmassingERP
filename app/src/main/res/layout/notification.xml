@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/linear_layout"
@@ -7,18 +8,19 @@
     android:orientation="horizontal"
     android:padding="20dp">
 
-    <!-- Parent Layout of ImageView -->
+
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 
-        <!--Image to be displayed beside the notification text-->
+
         <ImageView
             android:id="@+id/icon"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:padding="5dp"
-            android:src="@drawable/logo" />
+            android:layout_gravity="center_vertical"
+            android:src="@mipmap/applogo" />
     </LinearLayout>
 
     <!-- Parent layout for holding the Title and the Body-->
@@ -44,7 +46,19 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Message"
+            android:maxLines="30"
             android:textSize="15sp" />
+
+
+        <!-- Button for Tap to show  -->
+        <Button
+            android:layout_width="40dp"
+            android:layout_height="22dp"
+            android:id="@+id/actionBtn"
+            android:text="Tap to View "
+            android:textColor="#F60303"
+            android:textSize="20dp"
+            android:backgroundTint="#EFEDED"/>
 
     </LinearLayout>
 

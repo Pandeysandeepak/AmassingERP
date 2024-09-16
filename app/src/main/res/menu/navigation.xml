@@ -1,16 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:id="@+id/dashboard"
-        android:icon="@drawable/home_p"
-        android:title="Dashboard"/>
+    <item android:id="@+id/home"
+        android:icon="@drawable/home_738822"
+        android:title=" "
+        />
 
-    <item android:id="@+id/setting"
-        android:icon="@drawable/settings_p"
-        android:title="Setting" />
+    <item android:id="@+id/menu"
+        android:icon="@drawable/menu_8917404"
+        android:title=""
+       />
 
-    <item android:id="@+id/payments"
-        android:icon="@drawable/notice_p"
-        android:title="payments"/>
+    <item android:id="@+id/settings"
+        android:icon="@drawable/settings_3524636"
+        android:title=" "
+       />
+
+    <item android:id="@+id/Notice"
+        android:icon="@drawable/outline_notifications_active_24"
+        android:title=" "
+       />
 
 
 </menu>

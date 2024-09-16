@@ -8,6 +8,7 @@ converterGsonVersion = "2.11.0"
 dexter = "6.2.3"
 fadingtextview = "2.5"
 firebaseAdmin = "9.3.0"
+firebaseAdminVersion = "9.2.0"
 firebaseBom = "33.1.2"
 firebaseBomVersion = "31.0.2)"
 firebaseCore = "21.1.1"
@@ -20,7 +21,11 @@ googleGoogleAuthLibraryOauth2Http = "1.3.0"
 googleGoogleAuthLibraryOauth2HttpVersion = "1.19.0"
 googleHttpClientGson = "1.23.0' exclude module"
 googleServices = "4.4.2"
+googleServicesVersion = "4.3.15"
 gson = "2.10.1"
+jacksonAnnotations = "2.15.0"
+jacksonCore = "2.15.0"
+jacksonDatabind = "2.15.0"
 junit = "4.13.2"
 junitVersion = "1.2.1"
 espressoCore = "3.6.1"
@@ -39,6 +44,7 @@ playServicesGames = "23.2.0"
 playServicesIdentity = "18.1.0"
 retrofit = "2.11.0"
 retrofitVersion = "2.9.0"
+slidingpanelayout = "1.2.0"
 swiperefreshlayout = "1.1.0"
 googleGmsGoogleServices = "4.4.2"
 firebaseMessaging = "24.0.0"
@@ -46,6 +52,7 @@ volley = "1.2.1"
 gamesActivity = "3.0.5"
 
 [libraries]
+androidx-slidingpanelayout = { module = "androidx.slidingpanelayout:slidingpanelayout", version.ref = "slidingpanelayout" }
 androidx-swiperefreshlayout-swiperefreshlayout = { module = "androidx.swiperefreshlayout:swiperefreshlayout", version.ref = "androidxSwiperefreshlayout" }
 appauth = { module = "net.openid:appauth", version.ref = "appauth" }
 appauth-v0100 = { module = "net.openid:appauth", version.ref = "appauthVersion" }
@@ -54,6 +61,7 @@ converter-gson-v2110 = { module = "com.squareup.retrofit2:converter-gson", versi
 dexter = { module = "com.karumi:dexter", version.ref = "dexter" }
 fadingtextview = { module = "com.tomer:fadingtextview", version.ref = "fadingtextview" }
 firebase-admin = { module = "com.google.firebase:firebase-admin", version.ref = "firebaseAdmin" }
+firebase-admin-v920 = { module = "com.google.firebase:firebase-admin", version.ref = "firebaseAdminVersion" }
 firebase-analytics = { module = "com.google.firebase:firebase-analytics" }
 firebase-bom = { module = "com.google.firebase:firebase-bom", version.ref = "firebaseBom" }
 firebase-core = { module = "com.google.firebase:firebase-core", version.ref = "firebaseCore" }
@@ -67,7 +75,11 @@ google-auth-library-oauth2-http-v130 = { module = "com.google.auth:google-auth-l
 google-firebase-analytics = { module = "com.google.firebase:firebase-analytics" }
 google-http-client-gson = { module = "com.google.http-client:google-http-client-gson", version.ref = "googleHttpClientGson" }
 google-services = { module = "com.google.gms:google-services", version.ref = "googleServices" }
+google-services-v4315 = { module = "com.google.gms:google-services", version.ref = "googleServicesVersion" }
 gson = { module = "com.google.code.gson:gson", version.ref = "gson" }
+jackson-annotations = { module = "com.fasterxml.jackson.core:jackson-annotations", version.ref = "jacksonAnnotations" }
+jackson-core = { module = "com.fasterxml.jackson.core:jackson-core", version.ref = "jacksonCore" }
+jackson-databind = { module = "com.fasterxml.jackson.core:jackson-databind", version.ref = "jacksonDatabind" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }

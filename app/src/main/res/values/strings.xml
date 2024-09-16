@@ -9,5 +9,13 @@
     <string name="loc_perm">notificationTitle</string>
     <string name="loc_perm_text">notificationBody</string>
     <string name="app_auth_redirect_scheme">myapp</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="viewpager">viewPager</string>
+    <string name="webView" />
+    <string name="settingbutton">SettingButton</string>
+    <string name="noticebutton">NoticeButton</string>
+    <string name="menubutton">MenuButton</string>
+    <string name="homebutton">HomeButton</string>
 
 </resources>

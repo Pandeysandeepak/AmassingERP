@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
-    android:background="@drawable/amassingnotificationbackground"
     android:layout_height="match_parent"
-    tools:context=".restResources_.NoticeWindow">
+    android:background="@drawable/amassingnotificationbackground"
+    tools:context=".Broadcast">
 
     <ScrollView
         android:id="@+id/scrollView"
@@ -21,9 +20,8 @@
             android:id="@+id/ScrollViewChild"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:weightSum="10"
             android:orientation="vertical">
-
-
             <!-- Bottom Navigation -->
 
             <LinearLayout
@@ -32,10 +30,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginStart="30dp"
-                android:layout_marginTop="80dp"
+                android:layout_marginTop="100dp"
                 android:layout_marginEnd="30dp"
-
-
                 android:background="@drawable/linearlayout"
                 android:elevation="4dp"
                 android:orientation="vertical"
@@ -69,7 +65,7 @@
                     android:layout_height="48dp"
                     android:layout_marginTop="5dp"
                     android:background="@drawable/lightbackgroundgray"
-                    android:inputType="text"
+                    android:inputType="textCapSentences"
                     android:padding="10dp"
                     android:textColor="@color/black" />
 
@@ -89,7 +85,7 @@
                     android:layout_marginTop="5dp"
                     android:background="@drawable/lightbackgroundgray"
                     android:gravity="top"
-                    android:inputType="text"
+                    android:inputType="textCapSentences|textMultiLine"
                     android:maxLines="10"
                     android:padding="10dp"
                     android:textAlignment="inherit"
@@ -130,111 +126,10 @@
                 </LinearLayout>
             </LinearLayout>
 
-            <LinearLayout
-                android:id="@+id/bottom_navigation"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_gravity="bottom"
-                android:layout_weight="0.084"
-                android:background="@android:color/transparent"
-                android:gravity="center"
-                android:orientation="horizontal"
-                android:layout_marginTop="120dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/Noticebox"
-                app:layout_constraintVertical_bias="1.0"
-                tools:layout_editor_absoluteX="16dp">
 
-                <!-- Home Button -->
-                <LinearLayout
-                    android:id="@+id/HomeButton"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:background="@drawable/circularbackground"
-                    android:clickable="true"
-                    android:contentDescription="@string/homebutton"
-                    android:focusable="true">
-
-                    <ImageView
-                        android:id="@+id/homeImage"
-                        android:layout_width="35dp"
-                        android:layout_height="35dp"
-                        android:layout_gravity="center"
-                        android:layout_marginStart="9dp"
-                        android:src="@drawable/home_738822"
-                        app:tint="#DEDEDE" />
-                </LinearLayout>
-
-                <!-- Menu Button -->
-                <LinearLayout
-                    android:id="@+id/menuButton"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_marginStart="40dp"
-                    android:background="@drawable/circularbackground"
-                    android:clickable="true"
-                    android:contentDescription="@string/menubutton"
-                    android:focusable="true">
-
-                    <ImageView
-                        android:id="@+id/menuImage"
-                        android:layout_width="35dp"
-                        android:layout_height="35dp"
-                        android:layout_gravity="center"
-                        android:layout_marginStart="9dp"
-                        android:src="@drawable/menu_8917404"
-                        app:tint="#DEDEDE" />
-                </LinearLayout>
-
-                <!-- Settings Button -->
-                <LinearLayout
-                    android:id="@+id/SettingsButton"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_marginStart="40dp"
-                    android:background="@drawable/circularbackground"
-                    android:clickable="true"
-                    android:contentDescription="@string/settingbutton"
-                    android:focusable="true">
-
-                    <ImageView
-                        android:id="@+id/settingImage"
-                        android:layout_width="35dp"
-                        android:layout_height="35dp"
-                        android:layout_gravity="center"
-                        android:layout_marginStart="9dp"
-
-                        android:src="@drawable/settings_3524636"
-                        app:tint="#DEDEDE" />
-                </LinearLayout>
-
-                <!-- Notice Button -->
-                <LinearLayout
-                    android:id="@+id/NoticeButton"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_marginStart="40dp"
-                    android:layout_marginEnd="5dp"
-                    android:background="@drawable/circularbackground"
-                    android:clickable="true"
-                    android:contentDescription="@string/noticebutton"
-                    android:focusable="true">
-
-                    <ImageView
-                        android:id="@+id/NoticeImage"
-                        android:layout_width="35dp"
-                        android:layout_height="35dp"
-                        android:layout_gravity="center"
-                        android:layout_marginStart="9dp"
-                        android:src="@drawable/outline_notifications_active_24"
-                        app:tint="#DEDEDE" />
-                </LinearLayout>
-
-            </LinearLayout>
 
         </LinearLayout>
 
     </ScrollView>
 
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

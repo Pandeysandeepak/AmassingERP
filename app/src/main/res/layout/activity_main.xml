@@ -1,199 +1,138 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:orientation="vertical">
+    android:background="@color/white"
+    android:weightSum="10"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
 
-    <LinearLayout
+    <!-- SwipeRefreshLayout with responsive height using layout_weight -->
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefreshLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/ContentBox"
-        android:orientation="vertical">
-        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-            android:id="@+id/refreshLayout"
-            android:layout_width="match_parent"
-            android:layout_height="675dp"
-            android:layout_weight="5"
-            tools:ignore="ExtraText,MissingClass">
-
-            <WebView
-                android:id="@+id/web_view_contribute"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-            </WebView>
-        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
-
+        android:layout_weight="10"
+        android:layout_margin="0dp">
 
         <LinearLayout
-            android:id="@+id/bottomNavigationView"
             android:layout_width="match_parent"
-            android:layout_height="70sp"
-            android:background="@color/white"
-            android:layout_gravity="bottom"
-            android:orientation="horizontal"
-            >
+            android:layout_height="match_parent"
+            android:id="@+id/layoutBox"
+            android:orientation="vertical">
 
-            <LinearLayout
-                android:id="@+id/HomeBox"
-                android:layout_width="52dp"
-                android:layout_height="60sp"
-                android:layout_marginStart="5sp"
-                android:background="@color/white"
-                android:clickable="true"
-                android:layout_gravity="center_vertical"
-                android:focusable="true"
-                android:orientation="vertical"
-                android:pointerIcon="grabbing">
-
-                <ImageView
-                    android:id="@+id/HomeBtn"
-                    android:layout_width="40sp"
-                    android:layout_height="40sp"
-                    android:backgroundTint="@color/white"
-                    android:background="@color/white"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentBottom="true"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="5sp"
-                    android:src="@drawable/home_p" />
-
-                <TextView
-                    android:id="@+id/HomeBtnText"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-
-                    android:text="Home"
-                    android:layout_gravity="center_horizontal"
-                    android:textColor="@color/black"
-                    android:textStyle="bold" />
-            </LinearLayout>
-
-
-
-            <LinearLayout
-                android:id="@+id/MenuBox"
-                android:layout_width="52dp"
-                android:layout_height="60sp"
-                android:layout_marginStart="43sp"
-                android:background="@color/white"
-                android:layout_gravity="center_vertical"
-                android:layout_marginTop="2sp"
-                android:clickable="true"
-                android:focusable="true"
-                android:orientation="vertical"
-                android:pointerIcon="grabbing">
-
-                <ImageView
-                    android:id="@+id/MenuBtn"
-                    android:layout_width="35sp"
-                    android:layout_height="35sp"
-                    android:layout_marginTop="5sp"
-                    android:backgroundTint="@color/white"
-                    android:src="@drawable/menu_p"
-                    android:layout_gravity="center"/>
-
-                <TextView
-                    android:id="@+id/MenuBtnText"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8sp"
-                    android:text="Menu"
-                    android:textColor="@color/black"
-                    android:textStyle="bold" />
-
-
-
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:id="@+id/SettingBox"
-                android:layout_width="58dp"
-                android:layout_height="60sp"
-                android:layout_marginStart="43sp"
-                android:clickable="true"
-                android:layout_gravity="center_vertical"
-                android:background="@color/white"
-                android:focusable="true"
-                android:orientation="vertical"
-                android:pointerIcon="grabbing">
-                <ImageView
-                    android:id="@+id/SettingBtn"
-                    android:layout_width="40sp"
-                    android:backgroundTint="@color/white"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_height="40sp"
-                    android:src="@drawable/settings_p" />
-
-                <TextView
-                    android:id="@+id/SettingBtnText"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:text="Settings"
-                    android:textColor="@color/black"
-                    android:textStyle="bold" />
-
-
-
-
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:id="@+id/NoticeBox"
-                android:layout_width="64dp"
-                android:layout_height="70dp"
-                android:layout_gravity="center_vertical"
-                android:layout_marginStart="43sp"
-                android:clickable="true"
-                android:background="@color/white"
-                android:focusable="true"
-                android:orientation="vertical"
-                android:pointerIcon="grabbing">
-
-                <ImageView
-                    android:id="@+id/NoticeBtn"
-                    android:layout_width="47sp"
-                    android:layout_height="47dp"
-                    android:backgroundTint="@color/white"
-                    android:layout_gravity="center_horizontal"
-                    android:scaleType="fitXY"
-                    android:src="@drawable/notice_p" />
-
-                <TextView
-                    android:id="@+id/NoticeBtnText"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:text="Notice"
-                    android:textColor="@color/black"
-                    android:textStyle="bold" />
-            </LinearLayout>
-
-
-
-
-
-
-
-
+        <!-- WebView takes full space inside SwipeRefreshLayout -->
+        <WebView
+            android:id="@+id/webView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/frameLayout"/>
 
         </LinearLayout>
 
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
+    <!-- Bottom Navigation -->
+    <LinearLayout
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_weight="0.084"
+        android:orientation="horizontal"
+        android:background="@android:color/transparent"
+        android:gravity="center">
 
+        <!-- Home Button -->
+        <LinearLayout
+            android:id="@+id/HomeButton"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/circularbackground"
+            android:clickable="true"
+            android:contentDescription="@string/homebutton"
+            android:focusable="true">
 
+            <ImageView
+                android:id="@+id/homeImage"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                app:tint="@color/black"
+                android:layout_gravity="center"
+                android:layout_marginStart="9dp"
+                android:src="@drawable/home_738822" />
+        </LinearLayout>
 
+        <!-- Menu Button -->
+        <LinearLayout
+            android:id="@+id/menuButton"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="40dp"
+            android:background="@drawable/circularbackground"
+            android:contentDescription="@string/menubutton"
+            android:clickable="true"
+            android:focusable="true">
 
+            <ImageView
+                android:id="@+id/menuImage"
+                android:layout_width="29dp"
+                android:layout_height="29dp"
+                android:layout_gravity="center"
+                app:tint="@color/black"
+                android:layout_marginStart="9dp"
+                android:src="@drawable/menu_8917404" />
+        </LinearLayout>
 
+        <!-- Settings Button -->
+        <LinearLayout
+            android:id="@+id/SettingsButton"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="40dp"
+            android:background="@drawable/circularbackground"
+            android:clickable="true"
+            android:contentDescription="@string/settingbutton"
+            android:focusable="true">
+
+            <ImageView
+                android:id="@+id/settingImage"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                app:tint="@color/black"
+                android:layout_marginStart="9dp"
+                android:src="@drawable/settings_3524636" />
+        </LinearLayout>
+
+        <!-- Notice Button -->
+        <LinearLayout
+            android:id="@+id/NoticeButton"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="5dp"
+            android:background="@drawable/circularbackground"
+            android:contentDescription="@string/noticebutton"
+            android:clickable="true"
+            android:focusable="true">
+
+            <ImageView
+                android:id="@+id/NoticeImage"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="9dp"
+                app:tint="@color/black"
+                android:src="@drawable/outline_notifications_active_24" />
+        </LinearLayout>
 
     </LinearLayout>
 
-
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+</LinearLayout>

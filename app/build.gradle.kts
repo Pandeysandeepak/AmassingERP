@@ -4,7 +4,9 @@ import java.util.regex.Pattern.compile
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.google.gms.google.services)
+
 }
+
 
 android {
     namespace = "com.example.webview"
@@ -67,7 +69,10 @@ android {
         implementation (libs.play.services.identity)
         implementation(libs.volley)
         implementation(libs.dexter)
-
-
+        implementation (libs.jackson.core)
+        implementation (libs.jackson.databind)
+        implementation (libs.jackson.annotations)
+        implementation (libs.androidx.slidingpanelayout)
+        implementation(libs.okhttp)
     }
 }
